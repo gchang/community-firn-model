@@ -31,7 +31,6 @@ import sys
 import math
 from shutil import rmtree
 import os
-import psutil
 import shutil
 import time
 import inspect
