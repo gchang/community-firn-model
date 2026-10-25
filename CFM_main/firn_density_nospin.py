@@ -534,9 +534,9 @@ class FirnDensityNoSpin:
             Nyears = 10 #number of years to average for T_mean
             NN = int(np.mean(S_PER_YEAR/self.dt)*Nyears)
             # NN = int(self.c['stpsPerYear']*Nyears)
-            self.T_mean = pd.Series(self.Ts).rolling(window=NN+1,win_type='hamming').mean().values
+            self.T_mean = pd.Series(self.Ts).rolling(window=NN+1,win_type='hamming').mean().values.copy()
             self.T_mean[np.isnan(self.T_mean)] = self.T_mean[NN]
-            self.bdot_av = pd.Series(self.bdot).rolling(window=NN+1,win_type='hamming').mean().values
+            self.bdot_av = pd.Series(self.bdot).rolling(window=NN+1,win_type='hamming').mean().values.copy()
             self.bdot_av[np.isnan(self.bdot_av)] = self.bdot_av[NN]
         except Exception:
             self.T_mean = np.mean(self.Ts) * np.ones(self.stp)
