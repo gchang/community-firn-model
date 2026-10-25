@@ -16,9 +16,9 @@ Both arrays are now copied before the fill (`.values.copy()`), the same change a
 
 Results: with pandas 2 nothing changes (both release examples identical before and after). With pandas 3 the model now uses the rolling mean as intended and reproduces the pandas 2 results. For the release examples that is a change of up to 68 kg/m3 at single depth points, the time-mean depth of 550 kg/m3 moves from 16.0 to 16.2 m and the mean firn air content from 26.07 to 26.14 m (csv) and 26.22 to 26.29 m (dataframe). The reference outputs in `CFM_main/CFMoutput_example/` match the old pandas 3 fallback, so they now differ from a pandas 3 or pandas 2 run by those amounts; they were not regenerated here.
 
-## 2026-10-25: setup.py version
+## 2026-10-25: setup.py version change taken out again
 
-`setup.py` said `1.1.9` while `main.py`, `CITATION.cff` and `changelog.md` say `3.2.0`. It now says `3.2.0`, and the release checklist at the top of `changelog.md` names `setup.py` alongside the other three. Results do not change.
+Tag `v3.2.0.post1` also changed the version in `setup.py` from `1.1.9` to `3.2.0` and added `setup.py` to the release checklist in `changelog.md`. That does not affect whether the model runs or what it computes, so both are back as the authors have them.
 
 ## Notes for running it
 
